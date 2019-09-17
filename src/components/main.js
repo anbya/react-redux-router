@@ -1,13 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SettingsEthernetIcon from '@material-ui/icons/SettingsEthernet';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
@@ -43,25 +42,27 @@ export default function MainPanel() {
       onKeyDown={toggleDrawer(side, false)}
     >
     <List>
-    <Link to="/">
-        <ListItem button>
+        <ListItem button onClick={ToHome}>
         <ListItemIcon>
             <SettingsEthernetIcon />
         </ListItemIcon>
         <ListItemText primary="HOME" />
         </ListItem>
-    </Link>
-    <Link to="/about">
-        <ListItem button>
+        <ListItem button onClick={ToAbout}>
         <ListItemIcon>
             <SettingsEthernetIcon />
         </ListItemIcon>
         <ListItemText primary="ABOUT" />
         </ListItem>
-    </Link>
     </List>
     </div>
   );
+  function ToHome(){
+    window.location.replace("/")
+  }
+  function ToAbout(){
+    window.location.replace("/about")
+  }
   function Home() {
     return (
       <div>
@@ -79,13 +80,13 @@ export default function MainPanel() {
 
   return (
     <div>
-      <SwipeableDrawer
-        open={state.left}
-        onClose={toggleDrawer('left', false)}
-        onOpen={toggleDrawer('left', true)}
-      >
-        {sideList('left')}
-      </SwipeableDrawer>
+    <SwipeableDrawer
+    open={state.left}
+    onClose={toggleDrawer('left', false)}
+    onOpen={toggleDrawer('left', true)}
+    >
+    {sideList('left')}
+    </SwipeableDrawer>
     <Router>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
