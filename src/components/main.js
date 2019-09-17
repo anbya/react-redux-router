@@ -54,7 +54,6 @@ export default function MainPanel() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer('left', true)}>Open Left</Button>
       <SwipeableDrawer
         open={state.left}
         onClose={toggleDrawer('left', false)}
