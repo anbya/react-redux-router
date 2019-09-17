@@ -7,6 +7,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SettingsEthernetIcon from '@material-ui/icons/SettingsEthernet';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import HomePage from './home';
 
 const useStyles = makeStyles({
   list: {
@@ -66,7 +67,7 @@ export default function MainPanel() {
   function Home() {
     return (
       <div>
-        <h2>Home</h2>
+          <HomePage />
       </div>
     );
   }
