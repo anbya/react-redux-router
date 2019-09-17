@@ -7,6 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SettingsEthernetIcon from '@material-ui/icons/SettingsEthernet';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
@@ -41,16 +42,40 @@ export default function MainPanel() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-          <ListItem button>
-            <ListItemIcon>
-                <SettingsEthernetIcon />
-            </ListItemIcon>
-            <ListItemText primary="TEST" />
-          </ListItem>
-      </List>
+    <List>
+    <Link to="/">
+        <ListItem button>
+        <ListItemIcon>
+            <SettingsEthernetIcon />
+        </ListItemIcon>
+        <ListItemText primary="HOME" />
+        </ListItem>
+    </Link>
+    <Link to="/about">
+        <ListItem button>
+        <ListItemIcon>
+            <SettingsEthernetIcon />
+        </ListItemIcon>
+        <ListItemText primary="ABOUT" />
+        </ListItem>
+    </Link>
+    </List>
     </div>
   );
+  function Home() {
+    return (
+      <div>
+        <h2>Home</h2>
+      </div>
+    );
+  }
+  function About() {
+    return (
+      <div>
+        <h2>About</h2>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -61,6 +86,10 @@ export default function MainPanel() {
       >
         {sideList('left')}
       </SwipeableDrawer>
+    <Router>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+    </Router>
     </div>
   );
 }
