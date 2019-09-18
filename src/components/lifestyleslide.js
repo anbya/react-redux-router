@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   Carousel,
+  CarouselControl,
   CarouselItem, Card, CardBody, CardFooter
 } from 'reactstrap';
 
@@ -90,6 +91,8 @@ class LifeStyleSlide extends Component {
         previous={this.previous}
       >
         {slides}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
       </Carousel>
     );
   }
