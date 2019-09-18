@@ -70,13 +70,13 @@ class LifeStyleSlide extends Component {
         >
         <Card>
             <CardBody>
-                <h1>This is image</h1>
+                <h1>This is image {item.caption}</h1>
             </CardBody>
             <CardBody style={{minHeight:"30vh"}}>
-                <h1>This is Body</h1>
+                <h1>This is Body {item.caption}</h1>
             </CardBody>
             <CardFooter>
-                <h1>This is Footer</h1>
+                <h1>This is Footer {item.caption}</h1>
             </CardFooter>
         </Card>
         </CarouselItem>
