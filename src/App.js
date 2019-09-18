@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import './assets/font-awesome/css/font-awesome.min.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Logo from './assets/images/logo.png';
 import LogoSquare from './assets/images/logosquare.png';
 import HomePage from './components/home';
 import AboutPage from './components/about';
+import Cartpage from './components/cart';
 import Modal1 from './components/Modal1';
 import { Container, Row, Col, Input } from 'reactstrap';
 
@@ -43,8 +45,9 @@ function App() {
       <Row className="MainWraper">
         <Col xs="12" sm="12" md="12" lg="12" xl="12">
           <Router>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Cartpage} />
               <Route path="/about" component={About} />
+              <Route path="/home" component={Home} />
           </Router>
         </Col>
       </Row>

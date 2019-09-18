@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button, CardHeader, CardBody,
     CardTitle, CardText } from 'reactstrap';
 import LifeStyleSlide from './lifestyleslide';
